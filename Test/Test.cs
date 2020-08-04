@@ -8,7 +8,7 @@ using Test.steps;
 namespace Test
 {
     [TestClass]
-    public class Test
+    public class Test : TestConfiguration
     {
         private NavigationSteps navigationSteps = new NavigationSteps();
         private LoginFormSteps loginFormSteps = new LoginFormSteps();
