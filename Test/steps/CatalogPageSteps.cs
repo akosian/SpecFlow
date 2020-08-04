@@ -11,7 +11,7 @@ namespace Test.steps
     class CatalogPageSteps
     {
         [Then(@"There is (.*) header on Catalog page")]
-        public void RememberPageHeader(string headerKey)
+        public void AssertPageHeader(string headerKey)
         {
             string header = new CatalogElementPage().GetCatalogElementHeader();
             string expectedValue = Store.get(headerKey).ToString();

@@ -23,6 +23,7 @@ namespace Frame.element
 
         public string GetText()
         {
+            WaitElement();
             return GetElement().Text;
         }
 

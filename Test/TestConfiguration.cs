@@ -9,13 +9,13 @@ namespace Test
     class TestConfiguration
     {
 
-        [AssemblyInitialize]
+        [TestInitialize]
         public void SetUp()
         {
             new Browser().GetDriver();
         }
 
-        [AssemblyCleanup]
+        [TestCleanup]
         public void Finish()
         {
             new Browser().GetDriver().Close();

@@ -1,0 +1,15 @@
+﻿{
+  "bindingCulture": {
+    "language": "en-us"
+  },
+  "language": {
+    "feature": "en-us",
+    "tool": "en-us"
+  },
+  "unitTestProvider": {
+    "name": "MSTest"
+  },
+  "generator": {
+    "allowDebugGeneratedFiles": true
+  }
+}
