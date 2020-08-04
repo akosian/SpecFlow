@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Frame.element
 {
-    public class BaseElement
+    public class Element
     {
         protected string locator;
         protected string name;

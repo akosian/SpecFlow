@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Frame.element
 {
-    public class Button : BaseElement
+    public class Button : Element
     {
 
         public Button(string locator, string name)

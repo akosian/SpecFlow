@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Frame.element
 {
-   public class Label : BaseElement
+   public class Label : Element
     {
         public Label(string locator, string name)
         {

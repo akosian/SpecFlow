@@ -13,7 +13,7 @@ namespace Frame
         {
         }
 
-        public ChromeDriver GetDriver()
+        public ChromeDriver GetInstance()
         {
             if(webDriver == null)
             {
@@ -24,7 +24,7 @@ namespace Frame
 
         public WebDriverWait GetWait(IWebDriver driver)
         {
-            return new WebDriverWait(driver, TimeSpan.FromSeconds(5000));
+            return new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
     }
 }

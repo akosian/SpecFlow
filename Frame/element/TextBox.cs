@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Frame.element
 {
-    public class TextBox : BaseElement
+    public class TextBox : Element
     {
 
         public TextBox(string locator, string name)

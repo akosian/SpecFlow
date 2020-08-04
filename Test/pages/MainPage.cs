@@ -1,12 +1,17 @@
-﻿using Frame.element;
+﻿using Frame;
+using Frame.element;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Test.pages
 {
-    public class MainPage
+    public class MainPage : Form
     {
+        public MainPage() : base("//div//img[@class='onliner_logo']", "Main Page")
+        {
+        }
+
         private Button btnLoginIcon = new Button("//div[contains(@class,'auth-bar__item')]", "Login button");
         private Button btnUserIcon = new Button("//div[@id='userbar']//a", "User icon");
         private Button btnLogout = new Button("//div[@id='userbar']//a[contains(text(),'Выйти')]", "Exist button");
