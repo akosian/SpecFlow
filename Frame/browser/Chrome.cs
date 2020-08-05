@@ -17,7 +17,7 @@ namespace Frame
 
         private ChromeOptions GetChromeOptions()
         {
-            List<string> value = JsonManager.GetChromeJsonValue("configuration.json");
+            List<string> value = JsonManager.GetChromeJsonValue("chromeConfiguration.json");
             ChromeOptions options = new ChromeOptions();
             value.ForEach(arg => options.AddArguments(arg));
             return options;

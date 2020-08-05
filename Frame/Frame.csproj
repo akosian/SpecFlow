@@ -7,6 +7,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="chromeConfiguration.json" />
+    <None Remove="config.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="chromeConfiguration.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="chromeConfiguration.json" />
+    <Resource Include="config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="FeatureConfiguration.cs" />
+    <Resource Include="Form.cs" />
+    <Resource Include="JsonManager.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />

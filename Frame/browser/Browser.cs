@@ -32,7 +32,7 @@ namespace Frame
 
         private static int GetTimeOut()
         {
-            JObject value = JsonManager.GetConfiguration();
+            JObject value = JsonManager.GetConfiguration("config.json");
             return int.Parse(value.GetValue(TimeOutKey).ToString());
         }
     }
