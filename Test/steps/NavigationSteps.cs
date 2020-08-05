@@ -10,7 +10,7 @@ namespace Test.steps
         [Given(@"I navigate to (.*) link")]
         public void NavigateTo(string url)
         {
-            new Browser().GetInstance().Url = url;
+            Browser.GetInstance().Url = url;
         }
     }
 }

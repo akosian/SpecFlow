@@ -13,19 +13,19 @@ namespace Frame.element
 
         public void WaitElement()
         {
-            new Browser().GetWait().Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            Browser.GetWait().Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
         }
 
         protected void WaitElementBeClickable()
         {
-            new Browser().GetWait().Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+            Browser.GetWait().Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
         }
 
         public bool isElementPresent()
         {
             try
             {
-               new Browser().GetWait().Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+               Browser.GetWait().Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
             }
             catch (WebDriverTimeoutException e)
             {
@@ -42,12 +42,12 @@ namespace Frame.element
 
         public IWebElement GetElement()
         {
-            return Browser.webDriver.FindElement(By.XPath(locator));
+            return Browser.GetInstance().FindElement(By.XPath(locator));
         }
 
         public int GetCount()
         {
-            return Browser.webDriver.FindElements(By.XPath(locator)).Count;
+            return Browser.GetInstance().FindElements(By.XPath(locator)).Count;
         }
     }
 }

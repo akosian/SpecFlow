@@ -9,13 +9,14 @@ namespace Frame
 {
     public class Browser
     {
-        public static IWebDriver webDriver;
+        private static IWebDriver webDriver;
+        private const string TimeOutKey = "timeout";
 
-        public Browser()
+        private Browser()
         {
         }
 
-        public ChromeDriver GetInstance()
+        public static ChromeDriver GetInstance()
         {
             if(webDriver == null)
             {
@@ -24,15 +25,15 @@ namespace Frame
             return (ChromeDriver) webDriver;
         }
 
-        public WebDriverWait GetWait()
+        public static WebDriverWait GetWait()
         {
             return new WebDriverWait(webDriver, TimeSpan.FromSeconds(GetTimeOut()));
         }
 
-        private int GetTimeOut()
+        private static int GetTimeOut()
         {
             JObject value = JsonManager.GetConfiguration();
-            return int.Parse(value.GetValue("timeout").ToString());
+            return int.Parse(value.GetValue(TimeOutKey).ToString());
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Test
         [BeforeScenario]
         public void BeforeScenario()
         {
-            Driver = new Browser().GetInstance();
+            Driver = Browser.GetInstance();
         }
 
         [AfterScenario]
