@@ -16,13 +16,13 @@ namespace Frame
         {
         }
 
-        public static ChromeDriver GetInstance()
+        public static IWebDriver GetInstance()
         {
             if(webDriver == null)
             {
-                webDriver  =  new Chrome().GetChrome();
+                webDriver  =  BrowserFactory.GetBrowser(BrowserType.CHROME);
             }
-            return (ChromeDriver) webDriver;
+            return webDriver;
         }
 
         public static WebDriverWait GetWait()

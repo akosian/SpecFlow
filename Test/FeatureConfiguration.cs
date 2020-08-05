@@ -1,5 +1,5 @@
 ﻿using Frame;
-using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace Test
@@ -7,7 +7,7 @@ namespace Test
     [Binding]
     public class FeatureConfiguration
     {
-        private ChromeDriver Driver;
+        private IWebDriver Driver;
 
         [BeforeScenario]
         public void BeforeScenario()
