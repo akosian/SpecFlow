@@ -16,18 +16,18 @@ namespace Frame
         }
 
         public static List<string> GetChromeJsonValue(string name)
-        { 
-                StreamReader sr = new StreamReader("C:\\Users\\karma\\source\\repos\\Test\\Frame\\chromeConfiguration.json");
-                string jsonString = sr.ReadToEnd();
-                JavaScriptSerializer ser = new JavaScriptSerializer();
+        {
+            StreamReader sr = new StreamReader("C:\\Users\\karma\\source\\repos\\Test\\Frame\\chromeConfiguration.json");
+            string jsonString = sr.ReadToEnd();
+            JavaScriptSerializer ser = new JavaScriptSerializer();
             return ser.Deserialize<List<string>>(jsonString);
         }
 
 
         public static JObject GetConfiguration()
         {
-                StreamReader sr = new StreamReader("C:\\Users\\karma\\source\\repos\\Test\\Frame\\config.json");
-                string jsonString = sr.ReadToEnd();
+            StreamReader sr = new StreamReader("C:\\Users\\karma\\source\\repos\\Test\\Frame\\config.json");
+            string jsonString = sr.ReadToEnd();
             return JObject.Parse(jsonString);
         }
     }
