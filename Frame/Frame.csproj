@@ -25,7 +25,6 @@
     <Resource Include="config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="FeatureConfiguration.cs" />
     <Resource Include="Form.cs" />
     <Resource Include="JsonManager.cs" />
   </ItemGroup>
