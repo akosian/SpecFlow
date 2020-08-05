@@ -13,12 +13,25 @@ namespace Frame.element
 
         public void WaitElement()
         {
-            new Browser().GetWait(Browser.webDriver).Until(ExpectedConditions.ElementIsVisible(By.XPath(this.locator)));
+            new Browser().GetWait().Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
         }
 
         protected void WaitElementBeClickable()
         {
-            new Browser().GetWait(Browser.webDriver).Until(ExpectedConditions.ElementToBeClickable(By.XPath(this.locator)));
+            new Browser().GetWait().Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+        }
+
+        public bool isElementPresent()
+        {
+            try
+            {
+               new Browser().GetWait().Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                return false;
+            }
+            return true;
         }
 
         public string GetText()

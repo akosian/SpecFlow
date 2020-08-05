@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using TechTalk.SpecFlow;
 using Test.pages;
 
@@ -10,7 +8,7 @@ namespace Test.steps
     public class TabsFormSteps
     {
 
-        [Given(@"I click (.*) random tab on Tabs form")]
+        [When(@"I click ""(.*)"" random tab on Tabs form")]
         public void ClickRandomTabAndGetName(string tabStoreName)
         {
             TabsForm form = new TabsForm();

@@ -1,14 +1,11 @@
 ﻿using Frame;
 using Frame.element;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Test.pages
 {
-    public class CatalogElementPage : Form
+    public class CatalogPage : Form
     {
-        public CatalogElementPage() : base("//div[contains(@class,'catalog-content')]", "Catalog Element Page")
+        public CatalogPage() : base("//div[contains(@class,'catalog-content')]", "Catalog Element Page")
         {
         }
 

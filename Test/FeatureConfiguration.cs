@@ -5,16 +5,14 @@ using TechTalk.SpecFlow;
 namespace Test
 {
     [Binding]
-    public class BrowserStack
+    public class FeatureConfiguration
     {
-
         private ChromeDriver Driver;
 
         [BeforeScenario]
         public void BeforeScenario()
         {
             Driver = new Browser().GetInstance();
-            ScenarioContext.Current["Driver"] = Driver;
         }
 
         [AfterScenario]

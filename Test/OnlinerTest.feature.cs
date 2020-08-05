@@ -116,12 +116,15 @@ namespace Test
                 this.ScenarioStart();
                 testRunner.Given("I navigate to http://onliner.by/ link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
                 testRunner.When("I click Login Icon on Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-                testRunner.And("I enter testmailonliner@mail.ru email on Login Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-                testRunner.And("I enter Password1.default password on Login Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                testRunner.And("I enter \"testmailonliner@mail.ru\" email on Login Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                testRunner.And("I enter \"Password1.default\" password on Login Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
                 testRunner.And("I click login button on Login Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-                testRunner.And("I click RandomTab random tab on Tabs form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                testRunner.Then("There is authorized user icon on Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                testRunner.When("I click Catalog option on Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                testRunner.And("I click \"RandomTab\" random tab on Tabs form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
                 testRunner.Then("There is RandomTab header on Catalog page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
                 testRunner.When("I logout on Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                testRunner.Then("There is no authorized user icon on Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             }
             this.ScenarioCleanup();
         }

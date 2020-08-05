@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 using Test.pages;
 
@@ -28,6 +26,21 @@ namespace Test.steps
         public void ClickCatalog()
         {
             new MainPage().ClickCatalog();
+        }
+
+        [Then(@"There is authorized user icon on Main page")]
+        public void AssertAuthorizedUserIconPresent()
+        {
+            bool isAuthorizedUserIconPresent = new MainPage().IsAuthorizedUserIconPresent();
+            Assert.IsTrue(isAuthorizedUserIconPresent);
+        }
+
+
+        [Then(@"There is no authorized user icon on Main page")]
+        public void AssertAuthorizedUserIconAbsent()
+        {
+            bool isAuthorizedUserIconPresent = new MainPage().IsAuthorizedUserIconPresent();
+            Assert.IsFalse(isAuthorizedUserIconPresent);
         }
     }
 }

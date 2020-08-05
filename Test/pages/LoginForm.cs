@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Frame;
+﻿using Frame;
 using Frame.element;
 
 namespace Test.pages
 {
-    class LoginForm
+    class LoginForm : Form
     {
+        public LoginForm() : base("//div[@class='auth-form__body']", "Login Form")
+        {
+        }
+
         private TextBox txbEmail = new TextBox("//div[@class='auth-form__body']//input[@type='text']", "Email field");
         private TextBox txbPassword = new TextBox("//div[@class='auth-form__body']//input[@type='password']", "Password field");
         private Button btnLogin = new Button("//div[@class='auth-form__body']//button[@type='submit']", "Login button");

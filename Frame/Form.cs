@@ -17,7 +17,7 @@ namespace Frame
             WaitPageLoad();
         }
 
-        protected void WaitPageLoad()
+        public void WaitPageLoad()
         {
             new Label(locator, name).WaitElement();
         }

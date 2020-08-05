@@ -1,7 +1,9 @@
-﻿using OpenQA.Selenium;
+﻿using Newtonsoft.Json.Linq;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Collections.Generic;
 
 namespace Frame
 {
@@ -17,14 +19,20 @@ namespace Frame
         {
             if(webDriver == null)
             {
-                webDriver  =  new ChromeDriver();
+                webDriver  =  new Chrome().GetChrome();
             }
             return (ChromeDriver) webDriver;
         }
 
-        public WebDriverWait GetWait(IWebDriver driver)
+        public WebDriverWait GetWait()
         {
-            return new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            return new WebDriverWait(webDriver, TimeSpan.FromSeconds(GetTimeOut()));
+        }
+
+        private int GetTimeOut()
+        {
+            JObject value = JsonManager.GetConfiguration();
+            return int.Parse(value.GetValue("timeout").ToString());
         }
     }
 }
