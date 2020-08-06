@@ -11,7 +11,7 @@ namespace Test
     public class FeatureContextConfiguration
     {
 
-        [BeforeFeature]
+        [BeforeFeature, Scope(Feature = "Onliner Test")]
         public static void BeforeFeature(FeatureContext featureContext)
         {
             featureContext.FeatureContainer.RegisterInstanceAs<Form>(new CatalogPage());
@@ -21,7 +21,7 @@ namespace Test
             Console.WriteLine("Starting " + featureContext.FeatureInfo.Title);
         }
 
-        [AfterFeature]
+        [AfterFeature, Scope(Feature = "Onliner Test")]
         public static void AfterFeature(FeatureContext featureContext)
         {
             Console.WriteLine("Finished " + featureContext.FeatureInfo.Title);
