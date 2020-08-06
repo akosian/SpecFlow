@@ -7,16 +7,23 @@ namespace Test.steps
     [Binding]
     public class TabsFormSteps
     {
+        private readonly ScenarioContext scenarioContext;
+        private readonly TabsForm tabsForm;
+
+        public TabsFormSteps(FeatureContext featureContext, ScenarioContext scenarioContext)
+        {
+            this.scenarioContext = scenarioContext;
+            tabsForm = featureContext.FeatureContainer.Resolve<TabsForm>();
+        }
 
         [When(@"I click ""(.*)"" random tab on Tabs form")]
-        public void ClickRandomTabAndGetName(string tabStoreName)
+        public void ClickRandomTabAndGetName(string tabContextName)
         {
-            TabsForm form = new TabsForm();
-            int tabsNumber = form.GetTabsNumber();
+            int tabsNumber = tabsForm.GetTabsNumber();
             int locatorNumber = new Random().Next(1, tabsNumber);
-            string tabName = form.GetTabName(locatorNumber);
-            form.ClickTab(locatorNumber);
-            Store.put(tabStoreName, tabName);
+            string tabName = tabsForm.GetTabName(locatorNumber);
+            tabsForm.ClickTab(locatorNumber);
+            scenarioContext.Add(tabContextName, tabName);
         }
     }
 }

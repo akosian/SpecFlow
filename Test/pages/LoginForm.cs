@@ -3,7 +3,7 @@ using Frame.element;
 
 namespace Test.pages
 {
-    class LoginForm : Form
+    public class LoginForm : Form
     {
         public LoginForm() : base("//div[@class='auth-form__body']", "Login Form")
         {
