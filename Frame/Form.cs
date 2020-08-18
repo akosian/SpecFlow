@@ -14,7 +14,6 @@ namespace Frame
         {
             this.locator = locator;
             this.name = name;
-            WaitPageLoad();
         }
 
         public void WaitPageLoad()

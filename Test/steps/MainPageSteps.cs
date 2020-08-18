@@ -7,17 +7,22 @@ namespace Test.steps
     [Binding]
     public class MainPageSteps
     {
+        private readonly MainPage mainPage;
+
+        public MainPageSteps(FeatureContext featureContext)
+        {
+            mainPage = featureContext.FeatureContainer.Resolve<MainPage>();
+        }
 
         [When(@"I click Login Icon on Main page")]
         public void ClickLoginIcon()
         {
-            new MainPage().ClickLoginIcon();
+            mainPage.ClickLoginIcon();
         }
 
         [When(@"I logout on Main page")]
         public void Logout()
         {
-            MainPage mainPage = new MainPage();
             mainPage.ClickUserIcon();
             mainPage.ClickLogout();
         }
@@ -25,13 +30,13 @@ namespace Test.steps
         [When(@"I click Catalog option on Main page")]
         public void ClickCatalog()
         {
-            new MainPage().ClickCatalog();
+            mainPage.ClickCatalog();
         }
 
         [Then(@"There is authorized user icon on Main page")]
         public void AssertAuthorizedUserIconPresent()
         {
-            bool isAuthorizedUserIconPresent = new MainPage().IsAuthorizedUserIconPresent();
+            bool isAuthorizedUserIconPresent = mainPage.IsAuthorizedUserIconPresent();
             Assert.IsTrue(isAuthorizedUserIconPresent);
         }
 
@@ -39,7 +44,7 @@ namespace Test.steps
         [Then(@"There is no authorized user icon on Main page")]
         public void AssertAuthorizedUserIconAbsent()
         {
-            bool isAuthorizedUserIconPresent = new MainPage().IsAuthorizedUserIconPresent();
+            bool isAuthorizedUserIconPresent = mainPage.IsAuthorizedUserIconPresent();
             Assert.IsFalse(isAuthorizedUserIconPresent);
         }
     }
